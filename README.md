@@ -13,6 +13,10 @@
 
 </div>
 
+<img width="1193" height="773" alt="image" src="https://github.com/user-attachments/assets/368b9ff6-5863-4bcb-87c0-dfdb9c2615b0" />
+<img width="1184" height="933" alt="image" src="https://github.com/user-attachments/assets/afaca4a4-7ee7-4ef5-b5b3-ec9aa300ddfc" />
+
+
 ---
 
 ## ✨ Características Principales
