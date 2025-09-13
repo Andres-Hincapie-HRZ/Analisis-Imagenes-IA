@@ -16,7 +16,7 @@ aplicacion.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB tamaño máxi
 os.makedirs(aplicacion.config['CARPETA_SUBIDAS'], exist_ok=True)
 
 # Configuración de la API
-CLAVE_API_OPENROUTER = "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"
+CLAVE_API_OPENROUTER = "TU API AQUI"
 URL_OPENROUTER = "https://openrouter.ai/api/v1/chat/completions"
 
 def procesar_imagen_con_inteligencia_artificial(ruta_imagen, pregunta):
