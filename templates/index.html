@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Imágenes con IA</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="encabezado">
+            <h1><i class="fas fa-brain"></i> Análisis de Imágenes con IA</h1>
+            <p>Carga una imagen y haz preguntas sobre ella usando inteligencia artificial</p>
+        </div>
+
+        <div class="contenido-principal">
+            <div class="seccion-carga">
+                <h2 class="titulo-seccion">
+                    <i class="fas fa-upload"></i> Cargar Imagen
+                </h2>
+                
+                <div class="area-carga" id="areaCarga">
+                    <div class="icono-carga">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="texto-carga">
+                        Arrastra y suelta una imagen aquí<br>
+                        o haz clic para seleccionar<br>
+                        <small>También puedes pegar con Ctrl+V</small>
+                    </div>
+                    <input type="file" id="entradaArchivo" class="entrada-archivo" accept="image/*">
+                    <button class="boton" onclick="document.getElementById('entradaArchivo').click()">
+                        <i class="fas fa-folder-open"></i> Seleccionar Imagen
+                    </button>
+                </div>
+
+                <div class="contenedor-vista-previa" id="contenedorVistaPrevia" style="display: none;">
+                    <img id="vistaPreviaImagen" class="vista-previa-imagen" alt="Vista previa">
+                    <button class="boton-limpiar-imagen" onclick="limpiarTodo()">
+                        <i class="fas fa-trash"></i> Limpiar Imagen
+                    </button>
+                    <div class="exito" id="exitoCarga" style="display: none;">
+                        <i class="fas fa-check-circle"></i> Imagen cargada exitosamente
+                    </div>
+                </div>
+            </div>
+
+            <div class="seccion-analisis">
+                <h2 class="titulo-seccion">
+                    <i class="fas fa-question-circle"></i> Análisis con IA
+                </h2>
+                
+                <div class="formulario-pregunta">
+                    <div class="grupo-formulario">
+                        <label class="etiqueta-formulario" for="entradaPregunta">
+                            <i class="fas fa-comment"></i> ¿Qué quieres saber sobre la imagen?
+                        </label>
+                        <textarea 
+                            id="entradaPregunta" 
+                            class="area-texto-formulario" 
+                            placeholder="Ejemplo: ¿Qué objetos veo en esta imagen? ¿Qué colores predominan? ¿Qué está pasando en la escena?"
+                        ></textarea>
+                    </div>
+                    
+                    <button class="boton" id="botonPreguntar" onclick="hacerPregunta()" disabled>
+                        <i class="fas fa-robot"></i> Analizar Imagen
+                    </button>
+                </div>
+
+                <div class="cargando" id="cargando">
+                    <div class="spinner"></div>
+                    <p>Analizando imagen con IA...</p>
+                </div>
+
+                <div class="contenedor-respuesta" id="contenedorRespuesta" style="display: none;">
+                    <h3 class="titulo-respuesta">
+                        <i class="fas fa-lightbulb"></i> Respuesta de la IA
+                    </h3>
+                    <div class="texto-respuesta" id="textoRespuesta"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <p>Powered by OpenRouter AI • Desarrollado con Flask</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/funciones.js') }}"></script>
+</body>
+</html>
